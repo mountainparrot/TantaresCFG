@@ -1,0 +1,78 @@
+
+
+
+// Special switch for Kosmos-2I's glogged fuel mix (because I felt like adding it lol)
+@PART[chara*]:HAS[@MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]]]:FOR[zzzTantaresCFG]
+{
+	@MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]]
+	{
+		SUBTYPE
+		{
+			name = LF/NTO
+			title = Chara S1
+			tankType = KeaLFNTO
+			addedMass = #$../../massOffset$
+			addedCost = #$../../costOffset$
+		}
+		SUBTYPE
+		{
+			name = AZ50/O
+			title = Chara S2
+			tankType = KeaAZ50LOX
+			addedMass = #$../../massOffset$
+			addedCost = #$../../costOffset$
+		}
+	}
+}
+
+
+// Special setups (just Kosmos 2I for now)
+
+// Engines
+@PART[chara_lv_engine_s0p5_1]:AFTER[TantaresCFG]
+{
+	@MODULE[ModuleEngines*],*
+	{
+		@PROPELLANT[Oxidizer]
+		{
+			@name = NTO
+			@ratio = 4.5
+		}
+	}
+}
+@PART[chara_lv_engine_s0p5_2]:AFTER[TantaresCFG]
+{
+	// Only need to change name. 2.25:2.75 is the same as 0.9:1.1
+	@MODULE[ModuleEngines*],*
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = Aerozine50
+			@ratio = 4.5
+		}
+	}
+	@MODULE[ModuleRCS*],*
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = Aerozine50
+			@ratio = 4.5
+		}
+	}
+}
+
+// Tanks
+@PART[chara_lv_fuel_tank_s0p5_3|chara_lv_fuel_tank_s0p5_4]:AFTER[zzzTantaresCFG]
+{
+	@MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]]
+	{
+		%currentSubtype = LF/NTO
+	}
+}
+@PART[chara_lv_fuel_tank_s0p5_1|chara_lv_fuel_tank_s0p5_2]:AFTER[zzzTantaresCFG]
+{
+	@MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]]
+	{
+		%currentSubtype = AZ50/O
+	}
+}
