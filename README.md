@@ -5,4 +5,3 @@ TantaresCFG or Tantares Configs is an unofficial set of collated and new configs
  - B9PartSwitch
  - EngineIgnitor
  - Waterfall
- - CryoTanks
