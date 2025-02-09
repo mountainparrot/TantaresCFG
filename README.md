@@ -5,3 +5,6 @@ TantaresCFG or Tantares Configs is an unofficial set of collated and new configs
  - B9PartSwitch
  - EngineIgnitor
  - Waterfall
+ 
+## Download
+https://github.com/mountainparrot/TantaresCFG/releases
