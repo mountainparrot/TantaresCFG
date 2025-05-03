@@ -3,10 +3,11 @@ TantaresCFG or Tantares Configs is an unofficial set of collated and new configs
 
 Please note that these configs have not been tested with or made with standard gameplay progression in mind, although tech tree progression and actual cost balancing is planned in future.
 
-## Dependencies
+## Supported Mods
  - B9PartSwitch
  - EngineIgnitor
  - Waterfall
+ - VABOrganizer
  
 ## Download
 https://github.com/mountainparrot/TantaresCFG/releases
